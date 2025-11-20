@@ -23,11 +23,20 @@ Output : pneumlmrz
 alpha = "abcdefghijklmnopqrstuvwxyz" # original letters
 rev_alpha = alpha[::-1] # mirror letters
 
-dict_alpha = dict(zip(alpha, rev_alpha)) # dict (original & mirror letters)
+# dict [original letter (key) & mirror letters (value)]
+dict1 = dict(zip(alpha, rev_alpha)) 
 
+main_str = input("Enter String: ")
 n = int(input("Enter Element Position:"))
-strx = input("Enter String: ")
 
-str1 = strx[:n-1] # first part
-str2 = strx[n-1:] # second part
-print(str1, str2)
+prefix = main_str[:n-1] # first part
+suffix = main_str[n-1:] # second part
+
+mirror = '' # to store mirrored string
+
+for i in range(len(suffix)):
+  mirror = mirror + dict1[suffix[i]]
+
+# final string
+final_str = prefix + mirror
+print(final_str)

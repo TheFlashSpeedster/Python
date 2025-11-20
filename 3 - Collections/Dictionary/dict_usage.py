@@ -72,10 +72,10 @@ for i in dict4:
     print(i) # Print Keys
     print(dict4[i]) # Print Values
 
-for j in dict4.items(): # Print Key with Value
+for j in dict4.items(): # Print Key with Value (As Tuple Pairs)
     print(j)
 
-for x, y in dict4.items(): # Print Key with Value (without , or ())
+for x, y in dict4.items(): # Print Keys & Values (As Direct Output)
     print(x, y)
 
 
