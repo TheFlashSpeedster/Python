@@ -1,92 +1,134 @@
-# String — concise syntax lines followed by example code
+"""
+Strings - Examples and common operations
 
-# Basic string literals
-# Syntax: s = 'text'  or  s = "text"  or  s = '''multi-line'''
-single = 'Hello, World!'
-double = "Hello, World!"
-triple = '''Hello,
-World!'''
-print(single)
-print(double)
-print(triple)
+This module demonstrates:
+- String literals (single, double, triple quotes)
+- Basic string operations (concatenation, indexing, slicing)
+- Traversing strings (for/while/list comprehension)
+- Common string methods (transformations, manipulation)
+- Searches, counts, and boolean checks for string content
+"""
+
+# ---------------------------------------------------------------------------
+# 1. STRING LITERALS
+# ---------------------------------------------------------------------------
+
+# Basic string literal examples using single, double, and triple quotes.
+
+# Single quotes
+single_quote_str = 'Hello, World!'
+print(single_quote_str)
+
+# Double quotes
+double_quote_str = "Hello, World!"
+print(double_quote_str)
+
+# Triple quotes (useful for multi-line strings)
+triple_quote_str = '''Hello, World!'''
+print(triple_quote_str)
+
+# ---------------------------------------------------------------------------
+# 2. STRING OPERATIONS
+# ---------------------------------------------------------------------------
 
 # Concatenation
-# Syntax: s3 = s1 + s2
-a = "Hello"
-b = "World"
-c = a + " " + b
-print(c)
+str1 = "Hello"
+str2 = "World"
+concatenated_str = str1 + str2
+print("Concatenated String:", concatenated_str)
 
 # Indexing and slicing
-# Syntax: s[i] -> char, s[start:end] -> substring, s[start:end:step] -> substring with step
-idx = "Python"
-print(idx[0])        # P
-print(idx[-1])       # n
-print(idx[1:4])      # yth
-print(idx[::-1])     # reverse
+index_str = "Python"
+print(index_str[0])     # First character: P
+print(index_str[-1])    # Last character: n
+print(index_str[2])     # Third character: t
+print(index_str[-3])    # Third from the end: h
+print(index_str[1:4])   # Substring from index 1 to 3: yth
 
-# Traversal
-# Syntax: for ch in s: ...
-t = "Hello"
-for ch in t:
-  print(ch)
-# Syntax: while i < len(s): ...
-i = 0
-while i < len(t):
-  print(t[i])
-  i += 1
-# Syntax (list comp): [ch for ch in s]
-chars = [ch for ch in t]
-print(chars)
+# ---------------------------------------------------------------------------
+# 3. TRAVERSING STRINGS
+# ---------------------------------------------------------------------------
 
-# Sample string for methods
-sample = "  Hello, World! Welcome to Python Programming.  "
+# Using for loop
+traverse_str1 = "Hello World"
+for i in traverse_str1:
+  print(i)  # Prints each character on a new line
 
-# Length
-# Syntax: len(s) -> int
-print(len(sample))
+# Using while loop
+traverse_str2 = "Hello World"
+index = 0
+while index < len(traverse_str2):
+  print(traverse_str2[index])  # Prints each character on a new line
+  index += 1
 
-# Case transformations (return new string)
-# Syntax: s.lower(), s.upper(), s.title(), s.capitalize(), s.swapcase()
-print(sample.lower())
-print(sample.upper())
-print(sample.title())
-print(sample.capitalize())
-print(sample.swapcase())
+# Using list comprehension
+traverse_str3 = "Hello World"               # string
+traverse_list = [i for i in traverse_str3]  # list of characters
+for i in traverse_str3:
+  print(i)
 
-# Strip and whitespace
-# Syntax: s.strip(), s.lstrip(), s.rstrip()
-print(sample.strip())
-print(sample.lstrip())
-print(sample.rstrip())
+# ---------------------------------------------------------------------------
+# 4. STRING METHODS (TRANSFORMATIONS & MANIPULATIONS)
+# ---------------------------------------------------------------------------
 
-# Replace
-# Syntax: s.replace(old, new[, count])
-print(sample.replace("Python", "Java"))
-print(sample.replace("o", "0", 1))
+sample_str = "  Hello, World! Welcome to Python Programming.  "
 
-# Split and join
-# Syntax: s.split(sep), sep.join(list)
-words = sample.split()        # default splits on whitespace
-print(words)
-print("-".join(words))
+# Inspection
+print(len(sample_str))  # Length of the string (includes spaces)
 
-# Searches and counts
-# Syntax: s.find(sub) -> index or -1, s.index(sub) -> index or ValueError, s.count(sub) -> int
-print(sample.find("Python"))
-print(sample.index("Welcome"))
-print(sample.count("o"))
+# String transformations (return new string, doesn't modify original)
+print(sample_str.lower())       # Convert to lowercase
+print(sample_str.upper())       # Convert to uppercase
+print(sample_str.title())       # Capitalize first letter of each word
+print(sample_str.capitalize())  # Capitalize first letter of the string only
+print(sample_str.swapcase())    # Swap case of all characters
 
-# Starts/ends checks
-# Syntax: s.startswith(prefix), s.endswith(suffix)
-print(sample.startswith("  Hello"))
-print(sample.endswith("Programming.  "))
+# String manipulations (return new string, doesn't modify original)
+# strip() - remove leading and trailing whitespace
+print(sample_str.strip())
 
-# Character type checks
-# Syntax: s.isalpha(), s.isdigit(), s.isalnum()
-alpha_sample = "Hello"
-digit_sample = "12345"
-alnum_sample = "Hello123"
-print(alpha_sample.isalpha())
-print(digit_sample.isdigit())
-print(alnum_sample.isalnum())
+# replace(old, new, count) - replace occurrences of a substring
+print(sample_str.replace("Old_String", "New_String"))         # replace all occurrences
+print(sample_str.replace("Old_String", "New_String", 2))      # replace first 2 occurrences
+
+# split(separator) - split string into a list by the separator
+print(sample_str.split(" "))  # Split by space
+
+# ---------------------------------------------------------------------------
+# 5. STRING SEARCHES AND COUNTS
+# ---------------------------------------------------------------------------
+
+# len() - length of the string
+print(len(sample_str))
+
+# find(substring) - index of first occurrence, -1 if not found
+print(sample_str.find("Python"))
+
+# index(substring) - index of first occurrence, raises ValueError if not found
+print(sample_str.index("Welcome"))
+
+# count(substring) - count occurrences of a substring
+print(sample_str.count("o"))
+
+# ---------------------------------------------------------------------------
+# 6. STRING CHECKS (BOOLEAN METHODS)
+# ---------------------------------------------------------------------------
+
+# startswith(substring) - whether the string starts with the given substring
+print(sample_str.startswith("  Hello"))
+
+# endswith(substring) - whether the string ends with the given substring
+print(sample_str.endswith("Programming.  "))
+
+# ---------------------------------------------------------------------------
+# 7. CHARACTER TYPE CHECKS (RETURN BOOLEAN)
+# ---------------------------------------------------------------------------
+
+# isalpha() - all characters are alphabetic (a-z, A-Z)
+print(sample_str.isalpha())
+
+# isdigit() - all characters are digits (0-9)
+print(sample_str.isdigit())
+
+# isalnum() - all characters are alphanumeric (letters or digits)
+print(sample_str.isalnum())
