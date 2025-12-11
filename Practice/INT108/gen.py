@@ -1,3 +1,3 @@
-for i in range(5, 11):
-  with open(f"Practice/INT108/Unit 3/{i}.py", "w") as f:
+for i in range(1, 11):
+  with open(f"Practice/INT108/Unit 6/{i}.py", "w") as f:
     f.write("")
