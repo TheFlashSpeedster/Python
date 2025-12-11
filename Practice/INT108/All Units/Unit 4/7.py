@@ -4,11 +4,11 @@ Write function that takes two numbers and returns (sum, difference, product) as 
 """
 
 def operation(a, b):
-  tuple1 = []
-  tuple1.append(a+b)
-  tuple1.append(a-b)
-  tuple1.append(a*b)
+  list1 = []
+  list1.append(a+b)
+  list1.append(a-b)
+  list1.append(a*b)
 
-  return tuple(tuple1)
+  return tuple(list1)
 
 print(operation(2, 3))
