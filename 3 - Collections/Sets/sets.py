@@ -12,7 +12,7 @@ Unordered
 Unindexed
 - No Indexing
 
-Mutable 
+Mutable
 - Items cannot be Changed
 - But, Can Remove Items
 

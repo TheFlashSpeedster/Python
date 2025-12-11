@@ -1,3 +1,2 @@
-data = list(int(i) for i in input().split())
-
-print(data)
+sq = lambda x:x**2
+print(sq(4))

@@ -31,4 +31,3 @@ print(data1.child_method()) # Accessing Child Class's Method
 # 5. Hybrid Inheritance
 ## Combination of Two or More Types of Inheritance
 ## Example: Combination of Multiple & Multilevel Inheritance
-
